@@ -20,4 +20,4 @@ public class Main_12026_BOJ거리_136ms {
 					visit[j] = Math.min(visit[j], visit[i] + (j-i) * (j-i));
 		System.out.println(visit[n-1] != 1000001 ? visit[n-1] : -1);
 	}
-}
+} 
