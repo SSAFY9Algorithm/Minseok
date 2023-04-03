@@ -60,3 +60,4 @@ for i in range(n):
     for j in range(n):
         sumIce += arr[i][j]
 print(sumIce, findBigIce(), sep='\n')
+
