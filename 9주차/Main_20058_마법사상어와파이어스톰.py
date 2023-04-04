@@ -2,13 +2,16 @@ from collections import deque
 
 def devide(y, x, l, depth):
     if l>depth:
+        # 특정 범위 회전
         for idx, rotated in enumerate(list(map(list, zip(*[row[x:x+depth*2] for row in arr[y:y+depth*2]][::-1])))):
             arr[y+idx][x:x+depth*2] = rotated
         return
+    # 분할 정복
     for i in range(4):
         devide(y+(i//2)*depth, x+(i%2)*depth, l, depth>>1)
 
 def iceBreaking():
+    # 주변에 얼음이 몇개 있는지 확인용 배열
     check = [[0 for _ in range(n)] for _ in range(n)]
     for i in range(n):
         for j in range(n):
@@ -20,6 +23,7 @@ def iceBreaking():
                         check[y][x] += 1
     for i in range(n):
         for j in range(n):
+            # 3 미만일 시 얼음 감소
             if check[i][j] < 3 and arr[i][j]:
                 arr[i][j] -= 1
 
